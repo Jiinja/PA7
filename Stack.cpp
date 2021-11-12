@@ -8,7 +8,7 @@ Stack::Stack()
 
 Stack::~Stack()
 {
-	delete this->array;
+	//delete this->array;
 }
 
 bool Stack::push(std::string newData)
@@ -36,6 +36,7 @@ bool Stack::pop()
 
 std::string Stack::peak()
 {
+	if (top == -1) return "N/A";
 	return this->array[this->top];
 }
 
@@ -59,4 +60,40 @@ bool Stack::removeDate(string date)
 		}
 	}
 	return found;
+}
+
+string Stack::getString()
+{
+	string result = "";
+	for (int i = 0; i <= top; i++)
+	{
+		result = ("," + this->array[i]) + result;
+	}
+	result = (std::to_string(this->top + 1) + result);
+	return result;
+}
+
+std::ofstream& operator<<(std::ofstream& lhs, Stack& rhs)
+{
+	lhs << rhs.getString();
+	return lhs;
+}
+
+std::ifstream& operator>>(std::ifstream& lhs, Stack& rhs)
+{
+	int num;
+	string line;
+	lhs >> line;
+	num = stoi(line.substr(0, line.find_first_of(",")));
+	line = line.substr(line.find_first_of(",")+1);
+	for (int i = 0; i < num-1; i++)
+	{
+		rhs.push(line.substr(0, line.find_first_of(",")));
+		line = line.substr(line.find_first_of(",")+1);
+	}
+	if (num > 0)
+	{
+		rhs.push(line);
+	}
+	return lhs;
 }

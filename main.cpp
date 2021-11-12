@@ -1,9 +1,16 @@
+
+
+
 #include "List.h"
 
 int main()
 {
 	int userChoice = 0;
+	int userChoice2 = 0;
+	int userChoice3 = 0;
 	string userChoiceGrabber;
+	string userChoiceGrabber2;
+	string userChoiceGrabber3;
 	List<Data>* pList = new List<Data>;
 	ListNode<Data>* tempSearch;
 	while (userChoice != 7)
@@ -25,17 +32,21 @@ int main()
 		switch (userChoice)
 		{
 		case 1:
+			pList->clear();
 			if (pList->importCourseList())
 			{
-				cout << "Course List Imported Successfully" << endl;
+				cout << "[Course List Imported Successfully]" << endl;
 			}
 			else cout << "Course List Import FAILED" << endl;
 			break;
 		case 2:
-			cout << "case 2" << endl;
+			pList->clear();
+			if (pList->loadMaster()) cout << "[Master List Loaded Successfully]";
+			else cout << "[Master List Load FAILED]";
 			break;
 		case 3:
-			cout << "case 3" << endl;
+			if (pList->saveMaster()) cout << "[Master List Stored Successfully]";
+			else cout << "[Master List Storage FAILED]";
 			break;
 		case 4:
 			pList->markAbsences();
@@ -58,7 +69,36 @@ int main()
 			else cout << "Failed to find student" << endl;
 			break;
 		case 6:
-			cout << "case 6" << endl;
+			cout << "Which type of report do you want?" << endl;
+			cout << "[1] Report for all students" << endl;
+			cout << "[2] Report for students with more than n absences" << endl;
+			std::getline(cin, userChoiceGrabber2);
+			try
+			{
+				userChoice2 = stoi(userChoiceGrabber2);
+				switch (userChoice2)
+				{
+				case 1:
+					pList->printReport();
+					break;
+				case 2:
+					cout << "How many absences for a student to be on the report?" << endl;
+					std::getline(cin, userChoiceGrabber3);
+					try
+					{
+						userChoice3 = stoi(userChoiceGrabber3);
+						pList->printReport(userChoice3);
+					}
+					catch (const std::exception& e)
+					{
+						cout << "Please chose an integer" << endl;
+					}
+				}
+			}
+			catch (const std::exception& e) 
+			{
+				cout << "Please chose an integer from [1-2]" << endl;
+			}
 			break;
 		case 7:
 			break;

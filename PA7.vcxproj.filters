@@ -44,4 +44,15 @@
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="masterList.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="fullReport.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="thresholdReport.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

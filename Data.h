@@ -23,6 +23,7 @@ public:
 	std::string getLevel();
 	bool addAbsence(std::string newDate);
 	int getAbsenceCount();
+	void setAbsenceCount(int num);
 	Stack* getAbsenceDates();
 	bool removeAbsence(string date);
 
@@ -40,4 +41,6 @@ private:
 	Stack *absencesStack;
 };
 
+std::ofstream& operator<<(std::ofstream& lhs, Data& rhs);
+std::ifstream& operator>>(std::ifstream& lhs, Data& rhs);
 

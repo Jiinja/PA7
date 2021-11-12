@@ -137,9 +137,53 @@ bool operator==(const Data& data, const std::string& compare)
 	return result;
 }
 
+void Data::setAbsenceCount(int num)
+{
+	this->absencesCount = num;
+}
+
 bool Data::removeAbsence(string date)
 {
 	bool found = this->absencesStack->removeDate(date);
 	if (found) this->absencesCount--;
 	return found;
+}
+
+std::ofstream& operator<<(std::ofstream& lhs, Data& rhs)
+{
+	lhs << rhs.getRecord() << endl;
+	lhs << rhs.getID() << endl;
+	lhs << rhs.getName() << endl;
+	lhs << rhs.getEmail() << endl;
+	lhs << *rhs.getAbsenceDates() << endl;
+	lhs << rhs.getProgram() << endl;
+	lhs << rhs.getRecord() << endl;
+	lhs << rhs.getUnits() << endl;
+	lhs << rhs.getLevel();
+	return lhs;
+}
+
+std::ifstream& operator>>(std::ifstream& lhs, Data& rhs)
+{
+	string temp;
+	lhs >> temp;
+	rhs.setRecord(stoi(temp));
+	lhs >> temp;
+	rhs.setID(stoi(temp));
+	lhs >> temp;
+	rhs.setName(temp);
+	lhs >> temp;
+	rhs.setEmail(temp);
+	lhs >> *rhs.getAbsenceDates();
+	lhs >> temp;
+	rhs.setProgram(temp);
+	lhs >> temp;
+	rhs.setRecord(stoi(temp));
+	lhs >> temp;
+	rhs.setUnits(temp);
+	lhs >> temp;
+	rhs.setLevel(temp);
+
+	rhs.setAbsenceCount(stoi(rhs.getAbsenceDates()->getString().substr(0, 1)));
+	return lhs;
 }

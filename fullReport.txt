@@ -1,0 +1,11 @@
+Report: Absences for all students
+Name: Smith,John Absences: 1 Most recent absence: 11/12/2021
+Name: Beck,Sara Absences: 1 Most recent absence: 11/12/2021
+Name: Leinart,Timothy Absences: 1 Most recent absence: 11/12/2021
+Name: Art,Bruce Absences: 0 Most recent absence: N/A
+Name: James,Hannah Absences: 1 Most recent absence: 11/12/2021
+Name: Payton,Ella Absences: 1 Most recent absence: 11/12/2021
+Name: Sam,Theo Absences: 1 Most recent absence: 11/12/2021
+Name: Smith,Jane Absences: 0 Most recent absence: N/A
+Name: Willis,Bruce Absences: 0 Most recent absence: N/A
+Name: Mort,Kris Absences: 0 Most recent absence: N/A

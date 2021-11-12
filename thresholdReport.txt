@@ -1,0 +1,7 @@
+Report: Absences for students with 1 or more absences
+Name: Smith,John Absences: 1 Most recent absence: 11/12/2021
+Name: Beck,Sara Absences: 1 Most recent absence: 11/12/2021
+Name: Leinart,Timothy Absences: 1 Most recent absence: 11/12/2021
+Name: James,Hannah Absences: 1 Most recent absence: 11/12/2021
+Name: Payton,Ella Absences: 1 Most recent absence: 11/12/2021
+Name: Sam,Theo Absences: 1 Most recent absence: 11/12/2021
