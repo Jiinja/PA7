@@ -1,3 +1,11 @@
+/*****************************************************************************************
+* Programmer: Josh Maloy                                                                 *
+* Class: CptS 122, Fall 2021; Lab Section 1                                              *
+* Programming Assignment: PA7                                                            *
+* Date: November 12, 2021                                                                *
+* Description: this file defines all methods for the Data class							 *
+******************************************************************************************/
+
 #include "Data.h"
 
 Data::Data(int newRecord, int newID, std::string newName,

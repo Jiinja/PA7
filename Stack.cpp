@@ -1,3 +1,11 @@
+/*****************************************************************************************
+* Programmer: Josh Maloy                                                                 *
+* Class: CptS 122, Fall 2021; Lab Section 1                                              *
+* Programming Assignment: PA7                                                            *
+* Date: November 12, 2021                                                                *
+* Description: this file defines all methods for the Stack class						 *
+******************************************************************************************/
+
 #include "Stack.h"
 
 Stack::Stack()
