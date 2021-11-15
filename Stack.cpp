@@ -67,6 +67,7 @@ bool Stack::removeDate(string date)
 			array[i] = array[i + 1];
 		}
 	}
+	if (found) this->top--;
 	return found;
 }
 
